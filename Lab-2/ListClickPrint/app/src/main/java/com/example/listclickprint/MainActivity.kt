@@ -75,13 +75,13 @@ fun Cart() {
         selectedItem?.let {
             Text("You selected: $it")
         }
-        Switch(
-            checked = checked,
-            onCheckedChange = {
-                checked = it
-                Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()
-            }
-        )
+//        Switch(
+//            checked = checked,
+//            onCheckedChange = {
+//                checked = it
+//                Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()
+//            }
+//        )
     }
 }
 

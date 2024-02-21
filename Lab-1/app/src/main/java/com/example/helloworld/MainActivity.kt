@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GreetingHandler(modifier: Modifier = Modifier){
-    Greeting(name = "World")
+//    Greeting(name = "World")
     Greeting(name = "Sandeep", Modifier.fillMaxWidth())
 }
 
@@ -111,6 +111,6 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     HelloWorldTheme {
-        GreetingText(message = "Happy Birthday Sam!", from = "From Emma")
+        GreetingHandler()
     }
 }
