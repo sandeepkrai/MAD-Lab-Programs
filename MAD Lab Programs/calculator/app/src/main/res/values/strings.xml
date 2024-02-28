@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">calculator</string>
-    <string name="mul">*\n</string>
-    <string name="add">+</string>
-    <string name="enter_number2">Enter Number2</string>
-    <string name="enter_number1">Enter Number1</string>
-</resources>
