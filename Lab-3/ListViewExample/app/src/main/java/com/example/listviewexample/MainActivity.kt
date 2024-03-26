@@ -55,9 +55,9 @@ class MainActivity : ComponentActivity() {
 //                        modifier = Modifier.verticalScroll(rememberScrollState())
                     ){
                         Greeting("Android")
-                        LazyVerticalGridDemo()
-                        TableScreen()
-                        SimpleTabLayout()
+//                        LazyVerticalGridDemo()
+//                        TableScreen()
+//                        SimpleTabLayout()
 
                     }
                 }
@@ -75,7 +75,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         }
 
         // Add 5 items
-        items(5) { index ->
+        items(50) { index ->
             Text(text = "Item: $index")
         }
 
