@@ -1,5 +1,7 @@
 package com.example.l8q4
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -119,12 +121,37 @@ fun MyApp(navController: NavController) {
         }) {
             Text("See Students")
         }
+        MyComposableFunction(context)
 
     }
 }
 
+class PreferencesManager(context: Context) {
+    private val sharedPreferences: SharedPreferences =
+        context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
+    fun saveData(key: String, value: String) {
+        val editor = sharedPreferences.edit()
+        editor.putString(key, value)
+        editor.apply()
+    }
 
+    fun getData(key: String, defaultValue: String): String {
+        return sharedPreferences.getString(key, defaultValue) ?: defaultValue
+    }
+}
+@Composable
+fun MyComposableFunction(context: Context) {
+    val preferencesManager = remember { PreferencesManager(context) }
+    val data = remember { mutableStateOf(preferencesManager.getData("myKey", "Hello")) }
+
+    // Use the data variable in your Composable
+    Text(data.toString())
+
+    // Update data and save to SharedPreferences
+    preferencesManager.saveData("myKey", "newDataValue")
+    data.value = "newDataValue"
+}
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
